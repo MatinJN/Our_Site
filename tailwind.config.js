@@ -14,7 +14,7 @@ module.exports = {
       fontFamily: {
         interBold: 'Inter Bold',
         interRegular: 'inter Regular',
-        interMedium: 'Gotham Medium',
+        interMedium: 'İnter Medium',
         interSemibold: 'Inter SemiBold',
       },
       gridTemplateColumns: {
@@ -28,6 +28,8 @@ module.exports = {
         main: '#2563EB',
         black: '#2A2A2A',
         lime: '#D4FE2E',
+        lime1:'#BEE71D',
+        boz:'#D8DEE2'
         
       },
       borderColor: {

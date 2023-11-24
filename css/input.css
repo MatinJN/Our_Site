@@ -53,13 +53,25 @@ svg {
   @apply invisible opacity-0 max-h-0 duration-300;
   & > div {
     @apply flex;
-    & ul > li {
-
-    }
   }
 }
 .accordion button {
   @apply duration-300;
+}
+
+[data-type="bottom"]::-webkit-scrollbar {
+  display: none;
+}
+
+.shadow-okuCarusel {
+  background: linear-gradient(to left, #fff, transparent);
+  position: absolute;
+  width: 150px;
+  height: 100%;
+}
+
+[data-type="okuCar2"]::-webkit-scrollbar {
+  display: none;
 }
 
 .accordion.active .accordion-bottom {
@@ -79,7 +91,29 @@ svg {
   @apply rotate-90;
 }
 
+.card {
+  @apply cursor-pointer;
+}
 
+.accordion-container {
+  @apply overflow-y-auto h-[380px];
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.accordion-container::-webkit-scrollbar-track {
+  background-color: theme(yellow);
+}
+.accordion-container::-webkit-scrollbar-thumb {
+  /* background-color: theme(yellow-500); */
+  width: 4px;
+  height: 68px;
+}
+.accordion-container::-webkit-scrollbar {
+  width: 4px;
+}
 
 
 .muraciet::-webkit-scrollbar,
@@ -106,7 +140,3 @@ svg {
     background-repeat: repeat-y;
     background-size: contain;
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
