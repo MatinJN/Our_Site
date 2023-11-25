@@ -190,6 +190,7 @@ function OkuCarusel() {
         img.style.objectFit = 'cover'
         img.style.borderRadius = bottomBorderRadius + 'px'
         item.classList.add('snap-always', 'snap-center') 
+        item.style.shrink = 0
         bottomImgHeight = img.offsetHeight
     })
 
