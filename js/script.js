@@ -1,31 +1,62 @@
-// const closeIcon = document.querySelector('.closeIcon');
-// const burgerIcon = document.querySelector('.burgerIcon');
-// const burgerMenu = document.querySelector('.burgerMenu');
-// const main = document.querySelector('main');
-// const footer = document.querySelector('footer');
-// const header = document.querySelector('header');
-// burgerIcon.onclick = () => {
-//   burgerMenu.classList.remove('invisible');
-//   burgerMenu.classList.remove('opacity-0');
-//   main.classList.add('hidden');
-//   footer.classList.add('hidden');
-//   header.classList.add('min-h-screen');
-//   document.body.classList.remove('overflow-x-hidden');
-// };
-// closeIcon.onclick = () => {
-//   burgerMenu.classList.add('invisible');
-//   burgerMenu.classList.add('opacity-0');
-//   main.classList.remove('hidden');
-//   footer.classList.remove('hidden');
-//   header.classList.remove('min-h-screen');
-//   document.body.classList.add('overflow-x-hidden');
-// };
+const burgerIcon = document.querySelector('.burgerIcon');
+const burgerMenu = document.querySelector('.burgerMenu');
+const main = document.querySelector('main');
+const show = document.querySelector('.show')
+const vh = document.querySelector('vh')
+const hide = Array.from(document.querySelectorAll('.hide'))
+// console.log(hide);
+const footer = document.querySelector('footer');
+const scrolling = document.querySelector('[data-scrolling]')
+// console.log(header);
+burgerIcon.onclick = showMenu
+ function showMenu() {
+  console.log('sa');
+  burgerMenu.style.display = 'block'
+  main.classList.add('hidden');
+  burgerIcon.setAttribute('src', 'assets/closeIcon.svg')
+  show.style.display = 'block'
+  burgerIcon.onclick = close
+  hide.forEach((item) => {
+    item.classList.add('hidden')
+  })
+  footer.classList.add('hidden');
+  // console.log(header);
+  header.style.minHeight = '100vh'
+  // vh.classList.add('min-h-screen')
+  document.body.classList.remove('overflow-x-hidden');
+};
+ function close() {
+  hide.forEach((item) => {
+    item.classList.remove('hidden')
+  })
+  show.style.display = 'none'
+  burgerIcon.onclick = showMenu
+  burgerIcon.setAttribute('src', 'assets/hamburger.svg')
+  burgerMenu.style.display = 'none'
+  burgerMenu.classList.add('opacity-0');
+  main.classList.remove('hidden');
+  footer.classList.remove('hidden');
+  header.style.minHeight = ''
+  document.body.classList.add('overflow-x-hidden');
+};
+console.log(html);
+addEventListener('resize', () => {
+  if (html.offsetWidth > 768) {
+    close()
+  }
+})
 
-// // Accordion
+scrolling.addEventListener('click', () => {
+  html.style.scrollBehavior = 'smooth'
+  html.scrollTop = html.offsetHeight
+})
+
+// Accordion
 
 accordion('accordion');
 
 function accordion(acc) {
+  burgerIcon.setAttribute('src', 'assets/hamburger.svg')
   const accordions = document.querySelectorAll(`.${acc}`);
   accordions?.forEach((item) => {
     item.addEventListener('click', function () {

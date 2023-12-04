@@ -13,7 +13,7 @@ accordions?.forEach((item) => {
   });
 });
 
-console.log(popcorn);
+// console.log(popcorn);
 
 window.addEventListener('click', function (e) {
   const accordion = document.querySelector('.xususi');

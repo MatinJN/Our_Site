@@ -33,6 +33,18 @@ svg {
 }
 
 
+.cevir{
+  @apply rotate-180
+}
+
+.show {
+  display: none;
+}
+
+body, html {
+  overflow-x: hidden;
+}
+
 .accordion {
   @apply overflow-hidden duration-300
 }
@@ -84,15 +96,30 @@ svg {
   @apply max-h-[360px] opacity-100 visible;
 }
 
-.accordion.active button {
-  @apply rotate-90;
-}
 .accordion.active-m img {
   @apply rotate-90;
 }
-
+body{
+  overflow-x: clip
+}
+html{
+  scroll-behavior: smooth
+}
 .card {
   @apply cursor-pointer;
+}
+.fixedd{
+  position: sticky;
+  width: 100%;
+  z-index: 99999;
+  top: 0;
+}
+.abs{
+  position: absolute;
+  top: 0;
+}
+.sal{
+  height: 60px
 }
 
 .accordion-container {

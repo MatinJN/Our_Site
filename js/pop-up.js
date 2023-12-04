@@ -53,7 +53,7 @@ function OkuCarusel() {
     if (html.offsetWidth <= 764) {
         w = 413
         if (html.offsetWidth <= 425) {
-            w = 259
+            w = 257
         }
     }
     let topHeight = 320 // The height of the top
@@ -189,7 +189,9 @@ function OkuCarusel() {
         item.style.maxHeight = bottomHeight + 'px'
         img.style.objectFit = 'cover'
         img.style.borderRadius = bottomBorderRadius + 'px'
-        item.classList.add('snap-always', 'snap-center') 
+        item.style.scrollSnapStop = 'always'
+        item.style.scrollSnapAlign = 'center'
+        
         bottomImgHeight = img.offsetHeight
     })
 
@@ -246,7 +248,6 @@ function OkuCarusel() {
     slider.style.position = 'absolute'
 
     paragraph.style.maxHeight = okuCarScroll.offsetHeight + 'px'
-    console.log(paragraph.offsetHeight);
 
     }
     function bagla() {

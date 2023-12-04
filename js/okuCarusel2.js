@@ -12,14 +12,11 @@ fnc()
 //          Changeable zone
             const gap = 40
             const boxBorderRadius = '20px'
-
-
             let trackW = 600
 
             if (htmlW <= 650) {
                 trackW = htmlW - 50
             }
-
             let box = 4
             if (htmlW <= 1024) {
                 box = 3
@@ -31,11 +28,18 @@ fnc()
                 }
             }
 
-            
 
             track.forEach((item) => {
                 item.style.width = trackW + 'px'
             })
+
+            thumb.addEventListener('keydown',changeThumb)
+
+            function changeThumb(e) {
+                console.log('sa');
+                    thumb.style.left = (parseInt(thumb.style.left) + 10) + 'px';
+                
+            }
 
             
 
@@ -49,6 +53,7 @@ fnc()
                 item.style.borderRadius = boxBorderRadius
             })
 
+            helper.style.width = trackW + 'px'
             thumb.style.width = (okuCar2.offsetWidth / umumi * 100) + '%'
             thumb.style.width = thumb.offsetWidth + 'px'
             helper.style.width = (trackW - thumb.offsetWidth) + 'px'
@@ -69,6 +74,8 @@ fnc()
 
 
             main.addEventListener('scroll', () => {
-                thumb.style.left = ((main.scrollLeft / artiq) * 100) + '%'
+                thumb.style.left = ((Math.round(main.scrollLeft) / Math.round(artiq)) * 100) + '%'
             })
+
+
         } 
